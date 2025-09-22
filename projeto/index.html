@@ -3,9 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="config.css">
     <title>Document</title>
 </head>
 <body>
-    <H1>Index principal para a qual sera direcionado os docs</H1>
+    <H1>Formulario Profissional</H1>
+
+    <section>
+        <h2>Fale conosco!</h2>
+        <p>Ficou com alguma dúvida? Preencha este formulário e entraremos em contato!</p>
+        <form name="fmrfaleconosco" method="get" action="#" onsubmit="return procFormulario()">
+            <fieldset class="faleconosco">
+                <legend>Dados Profissionais:</legend>
+                <label for="nome">Nome da Empresa:</label>
+                <input type="text" name="txtnome" id="nome">
+                <label for="cnpj">CNPJ:</label>
+                <input type="text" name="txtcnpj" id="cnpj">
+                <label for="cargo">Cargo:</label>
+                <input type="email" name="txtcargo" id="cargo">
+                <label for="fone">Telefone:</label>
+                <input type="text" name="txtfone" id="fone">
+
+            </fieldset>
+            <fieldset class="faleconosco">
+                <legend>Motivo do contato:</legend>
+                <label for="motivo">Motivo:</label>
+                <select name="selmotivo" id="motivo">
+                    <option value="">Escolha</option>
+                    <option value="RE">Reclamação</option>
+                    <option value="SU">Sujestão</option>
+                    <option value="PR">Informação sobre o produto</option>
+                </select>
+                <label for="comentario">Comentário:</label>
+                <textarea name="txacomentario" id="comentario"></textarea>
+                <button type="reset">Limpar</button><button type="submit">Enviar</button>
+                
+            </fieldset>
+
+        </form>
+
+
+</section>
+
 </body>
 </html>
