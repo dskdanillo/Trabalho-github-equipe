@@ -1,0 +1,42 @@
+
+.faleconosco{
+
+    width: 300px;
+    margin: 0px auto;
+    margin-bottom: 10px;
+
+
+}
+
+.faleconosco input, .faleconosco textarea, .faleconosco select{
+
+
+    margin: 5px auto;
+    width: 100%;
+    padding: 5px 0;
+
+}
+
+.faleconosco textarea {
+
+height: 100px;
+resize: none;        
+
+}
+
+.faleconosco button{
+
+width: 30%;
+margin: 0 10%;
+background-color: gainsboro;
+font-weight: 16px;
+
+}
+
+body{
+
+background-color: black;
+color: green;
+
+
+}
