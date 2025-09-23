@@ -32,12 +32,12 @@ function procFormulario(){
         return false;
     }
     
-    var fone = document.getElementById("fone").value;
-    var expRegFone = new RegExp("^[(]{1}[1-9]{2}[)]{1}[0-9]{4,5}[-]{1}[0-9]{4}$");
+    var cnpj = document.getElementById("cnpj").value;
+    var expRegcnpj = new RegExp("/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/");
 
-    if (!expRegFone.test(fone)){
-        alert("Preencha o campo telefone corretamente");
-        document.getElementById('fone').focus();
+    if (!expRegcnpj.test(cnpj)){
+        alert("Preencha o campo CNPJ corretamente");
+        document.getElementById('cnpj').focus();
         return false
 
     }
