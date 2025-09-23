@@ -33,7 +33,7 @@ function procFormulario(){
     }
     
     var cnpj = document.getElementById("cnpj").value;
-    var expRegcnpj = new RegExp("/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/");
+    var expRegcnpj = new RegExp("/^(\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}|\d{14})$/");
 
     if (!expRegcnpj.test(cnpj)){
         alert("Preencha o campo CNPJ corretamente");
@@ -42,13 +42,13 @@ function procFormulario(){
 
     }
     
-    var email = document.getElementById("email").value;
-    var expRegEmail = new RegExp("/^[\w.-]+@[\w.-]+\.\w{2,}$/g");
-
-    if (!expRegemail.test(email)){
-        alert("Preencha o campo email corretamente");
-        document.getElementById("email").focus();
-        return false
+    var cargo = document.getElementById('cargo').value;
+    var expRegcargo = new RegExp("^[A-zÀ-ü]{3,}([]{1}[A-zÀ-ü]{2,})+$");
+    
+    if (!expRegNome.test(cargo)){
+        alert("Preencha o campo Cargo Corretamente.");
+        document.getElementById('cargo').focus();
+        return false;
     }
     
     
