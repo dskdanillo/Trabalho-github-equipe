@@ -51,6 +51,15 @@ function procFormulario(){
         return false;
     }
     
-    
+    var fone = document.getElementById("fone").value;
+    var expRegFone = new RegExp("^[(]{1}[1-9]{2}[)]{1}[0-9]{4,5}[-]{1}[0-9]{4}$");
+
+    if (!expRegFone.test(fone)){
+        alert("Preencha o campo telefone corretamente");
+        document.getElementById('fone').focus();
+        return false
+
+    }
+
     }
     
