@@ -32,6 +32,25 @@ function procFormulario(){
         return false;
     }
     
+    var cnpj = document.getElementById("cnpj").value;
+    var expRegcnpj = new RegExp("^\\d{2}\\.?\\d{3}\\.?\\d{3}/?\\d{4}-?\\d{2}$");
+
+    if (!expRegcnpj.test(cnpj)){
+        alert("Preencha o campo CNPJ corretamente");
+        document.getElementById('cnpj').focus();
+        return false
+
+    }
+    
+    var cargo = document.getElementById('cargo').value;
+    var expRegcargo = new RegExp("^[A-zÀ-ü]{3,}([]{1}[A-zÀ-ü]{2,})+$");
+    
+    if (!expRegNome.test(cargo)){
+        alert("Preencha o campo Cargo Corretamente.");
+        document.getElementById('cargo').focus();
+        return false;
+    }
+    
     var fone = document.getElementById("fone").value;
     var expRegFone = new RegExp("^[(]{1}[1-9]{2}[)]{1}[0-9]{4,5}[-]{1}[0-9]{4}$");
 
@@ -41,16 +60,6 @@ function procFormulario(){
         return false
 
     }
-    
-    var email = document.getElementById("email").value;
-    var expRegEmail = new RegExp("/^[\w.-]+@[\w.-]+\.\w{2,}$/g");
 
-    if (!expRegemail.test(email)){
-        alert("Preencha o campo email corretamente");
-        document.getElementById("email").focus();
-        return false
-    }
-    
-    
     }
     
