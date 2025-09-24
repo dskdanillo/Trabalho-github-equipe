@@ -33,7 +33,7 @@ function procFormulario(){
     }
     
     var cnpj = document.getElementById("cnpj").value;
-    var expRegcnpj = new RegExp("/^(\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}|\d{14})$/");
+    var expRegcnpj = new RegExp("^\\d{2}\\.?\\d{3}\\.?\\d{3}/?\\d{4}-?\\d{2}$");
 
     if (!expRegcnpj.test(cnpj)){
         alert("Preencha o campo CNPJ corretamente");
