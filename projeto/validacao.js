@@ -46,11 +46,12 @@ function validaFormulario(){
         
         
         var cep = document.frmcadastro.txtcep.value;
-        var expRegcep = new RegExp("^\d{5}-?\d{3}$")
+        var expRegcep = new RegExp("^\\d{5}-?\\d{3}$");
 
-        if (!expRegcep.test(cep)){
-        alert("Preencha o campo CEP corretamente.")
+        if (!expRegcep.test(cep)) {
+        alert("Preencha o campo CEP corretamente.");
         document.frmcadastro.txtcep.focus();
         return false;
         }
+
 }
