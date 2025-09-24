@@ -1,0 +1,107 @@
+/* Container principal do formulário */
+.form-container {
+    width: 90%;
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 25px 30px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: #A8D5BA;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Título centralizado */
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+/* Grupo de campos do formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Estilo dos labels */
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #cde8d8;
+}
+
+/* Estilo dos inputs */
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: #eee;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Mensagem de erro */
+.error {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 5px;
+    display: block;
+    min-height: 18px;
+}
+
+/* Campo com erro destacado */
+input.error-field {
+    border-color: #e74c3c;
+    background-color: #4b1a1a;
+}
+
+/* Estilo do botão */
+button[type="submit"] {
+    width: 100%;
+    padding: 14px 0;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Corpo da página */
+body {
+    background-color: #121212;
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 20px 15px;
+        width: 95%;
+        max-width: 350px;
+    }
+
+    button[type="submit"] {
+        font-size: 15px;
+        padding: 12px 0;
+    }
+}
