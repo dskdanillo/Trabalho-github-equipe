@@ -34,7 +34,15 @@ function validaFormulario(){
         return false;
         }
 
-        
+
+        var numero = document.frmcadastro.txtnumero.value;
+        var expRegNome = new RegExp("^\\d+$");
+
+        if (!expRegNome.test(numero)) {
+        alert("Preencha o campo numero corretamente.");
+        document.frmcadastro.txtnumero.focus();
+        return false;
+        }   
 
 
 
