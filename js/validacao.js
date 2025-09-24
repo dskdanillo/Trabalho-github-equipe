@@ -19,5 +19,13 @@ function validaFormulario(){
         }
 
         
+        var nome = document.frmcadastro.txtnome.value;
+        var expRegNome = new RegExp("(?i)\brua\s+[a-zà-ú0-9\s\.]+");
+
+        if (!expRegNome.test(nome)){
+        alert("Preencha o campo Nome da rua corretamente.");
+        document.frmcadastro.txtnome.focus();
+        return false;
+        }
     
 }
