@@ -36,15 +36,21 @@ function validaFormulario(){
 
 
         var numero = document.frmcadastro.txtnumero.value;
-        var expRegNome = new RegExp("^\\d+$");
+        var expRegNumero = new RegExp("^\\d+$");
 
-        if (!expRegNome.test(numero)) {
+        if (!expRegNumero.test(numero)) {
         alert("Preencha o campo numero corretamente.");
         document.frmcadastro.txtnumero.focus();
         return false;
-        }   
+        }
+        
+        
+        var cep = document.frmcadastro.txtcep.value;
+        var expRegcep = new RegExp("^\d{5}-?\d{3}$")
 
-
-
-    
+        if (!expRegcep.test(cep)){
+        alert("Preencha o campo CEP corretamente.")
+        document.frmcadastro.txtcep.focus();
+        return false;
+        }
 }
