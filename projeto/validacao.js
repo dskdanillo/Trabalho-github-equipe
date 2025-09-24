@@ -17,11 +17,6 @@ function validaFormulario(){
             document.frmcadastro.txtcep.focus();
             return false;
         
-        }else if(document.getElementById('complemento').value==""){
-            alert("Preencha o campo complemento");
-            document.frmcadastro.txtcomplemento.focus();
-            return false;
-        
         }
 
         
