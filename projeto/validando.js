@@ -1,90 +1,67 @@
 document.getElementById("cadastroForm").addEventListener("submit", function(event) {
-    // Evita o envio do formulário até as validações serem feitas
-    event.preventDefault();
-
-    // Limpa mensagens de erro anteriores
+    event.preventDefault(); // bloqueia envio até validar
     clearErrors();
-
-    // Chama a função de validação
     let isValid = true;
 
-    // Validação do nome
+    // Validação do nome: pelo menos 3 letras
     const nome = document.getElementById("nome").value.trim();
-    if (nome === "") {
-        showError("nome", "O nome completo é obrigatório.");
+    const letrasNoNome = nome.replace(/[^a-zA-Z]/g, "");
+    if (letrasNoNome.length < 3) {
+        showError("nome", "O nome deve conter pelo menos 3 letras.");
         isValid = false;
     }
 
-    // Validação do CPF
+    // Validação CPF: deve ter exatamente 11 números
     const cpf = document.getElementById("cpf").value.trim();
-    if (!isValidCPF(cpf)) {
-        showError("cpf", "CPF inválido. O formato deve ser XXX.XXX.XXX-XX.");
+    const somenteNumerosCPF = cpf.replace(/\D/g, "");
+    if (somenteNumerosCPF.length < 11) {
+        showError("cpf", "CPF deve conter 11 números.");
+        isValid = false;
+    } else if (somenteNumerosCPF.length > 11) {
+        showError("cpf", "CPF deve conter exatamente 11 números.");
         isValid = false;
     }
 
-    // Validação do e-mail
+    // Validação e-mail
     const email = document.getElementById("email").value.trim();
     if (!isValidEmail(email)) {
         showError("email", "E-mail inválido.");
         isValid = false;
     }
 
-    // Validação da data de nascimento
+    // Validação data nascimento
     const dataNascimento = document.getElementById("dataNascimento").value;
     if (!dataNascimento) {
         showError("dataNascimento", "A data de nascimento é obrigatória.");
         isValid = false;
+    } else if (!isValidDate(dataNascimento)) {
+        showError("dataNascimento", "Data inválida ou futura.");
+        isValid = false;
     }
 
-    // Se tudo estiver válido, envia o formulário
     if (isValid) {
         alert("Cadastro realizado com sucesso!");
-        document.getElementById("cadastroForm").submit();
+        this.submit();
     }
 });
 
-// Função para exibir mensagens de erro
 function showError(inputId, message) {
     document.getElementById(`${inputId}Error`).textContent = message;
 }
 
-// Função para limpar mensagens de erro
 function clearErrors() {
-    const errorElements = document.querySelectorAll(".error");
-    errorElements.forEach((element) => {
-        element.textContent = "";
-    });
+    document.querySelectorAll(".error").forEach(el => el.textContent = "");
 }
 
-// Função de validação do CPF (apenas para fins de exemplo)
-function isValidCPF(cpf) {
-    cpf = cpf.replace(/[^\d]+/g, ''); // Remove caracteres não numéricos
-    if (cpf.length !== 11) return false;
-
-    // Validação simples de CPF
-    let sum = 0;
-    let remainder;
-
-    for (let i = 0; i < 9; i++) {
-        sum += parseInt(cpf.charAt(i)) * (10 - i);
-    }
-    remainder = (sum * 10) % 11;
-    if (remainder === 10 || remainder === 11) remainder = 0;
-    if (remainder !== parseInt(cpf.charAt(9))) return false;
-
-    sum = 0;
-    for (let i = 0; i < 10; i++) {
-        sum += parseInt(cpf.charAt(i)) * (11 - i);
-    }
-    remainder = (sum * 10) % 11;
-    if (remainder === 10 || remainder === 11) remainder = 0;
-    if (remainder !== parseInt(cpf.charAt(10))) return false;
-
-    return true;
-}
-
-// Função de validação de e-mail
 function isValidEmail(email) {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return regex.test(email);
+}
+
+function isValidDate(dateString) {
+    const date = new Date(dateString);
+    const now = new Date();
+    if (isNaN(date.getTime())) return false;
+    if (date > now) return false;
+    return true;
 }
