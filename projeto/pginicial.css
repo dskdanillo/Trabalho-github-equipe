@@ -1,34 +1,185 @@
-/* styles.css (arquivo externo) */
-*{box-sizing:border-box;margin:0;padding:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial}
-:root{
-  --bg:#f5f7fb;
-  --card:#ffffff;
-  --accent:#6c63ff;
-  --muted:#6b7280;
+/* styles.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
-body{background:var(--bg);color:#111}
-.site-header{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;background:linear-gradient(90deg,#fff,#f7f8ff);box-shadow:0 2px 8px rgba(16,24,40,0.05)}
-.logo{font-weight:800;font-size:1.25rem;color:var(--accent)}
-.nav-buttons button{margin-left:10px;padding:10px 14px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);background:white;cursor:pointer}
-.container{max-width:1100px;margin:28px auto;padding:0 18px}
-.hero{padding:22px 18px;background:linear-gradient(180deg, rgba(108,99,255,0.08), transparent);border-radius:12px}
-.hero h1{font-size:1.6rem;margin-bottom:6px}
-.company-info{margin-top:20px}
-.vmv{display:flex;gap:14px;flex-wrap:wrap}
-.vmv article{background:var(--card);padding:14px;border-radius:10px;flex:1;min-width:220px;box-shadow:0 6px 18px rgba(12,20,50,0.04)}
-.vmv ul{margin-top:8px;list-style:disc;margin-left:18px;color:var(--muted)}
-.team{margin-top:10px;color:var(--muted)}
-.jobs{margin-top:22px}
-.jobs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.job-card{background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(12,20,50,0.04)}
-.job-card h4{margin-bottom:8px}
-.location{font-size:0.9rem;color:var(--muted)}
-textarea#funny-jobs{width:100%;margin-top:10px;padding:12px;border-radius:8px;border:1px solid rgba(16,24,40,0.06);background:#fbfdff;color:#0b1220}
-.apply{margin:22px 0;padding:14px;background:linear-gradient(90deg, rgba(108,99,255,0.05), transparent);border-radius:10px}
-.site-footer{text-align:center;padding:18px;color:var(--muted)}
+
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --accent: #6c63ff;
+  --muted: #94a3b8;
+  --highlight: #ff3cac;
+  --highlight2: #784ba0;
+  --highlight3: #2b86c5;
+}
+
+body {
+  background: var(--bg);
+  color: #f1f5f9;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 28px;
+  background: linear-gradient(90deg, var(--highlight), var(--highlight2), var(--highlight3));
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.nav-buttons button {
+  margin-left: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #fff;
+  color: var(--highlight);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.nav-buttons button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px var(--highlight);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 0 18px;
+}
+
+.hero {
+  padding: 22px 18px;
+  background: linear-gradient(180deg, rgba(108, 99, 255, 0.2), transparent);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+  background: linear-gradient(90deg, var(--highlight), var(--highlight2), var(--highlight3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.company-info {
+  margin-top: 20px;
+}
+
+.vmv {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.vmv article {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 220px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+.vmv ul {
+  margin-top: 8px;
+  list-style: disc;
+  margin-left: 18px;
+  color: var(--muted);
+}
+
+.team {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.jobs {
+  margin-top: 22px;
+}
+
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* Job cards como links clicáveis */
+.job-card {
+  display: block;
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+.job-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 20px var(--highlight);
+  background: linear-gradient(135deg, var(--highlight), var(--highlight2));
+}
+.job-card h4 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+.location {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.apply {
+  margin: 22px 0;
+  padding: 14px;
+  background: linear-gradient(90deg, rgba(108, 99, 255, 0.1), transparent);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 18px;
+  color: var(--muted);
+}
+
+/* Efeito de fumaça (overlay) */
+.smoke-overlay {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.8), rgba(255,255,255,0) 70%);
+  pointer-events: none;
+  opacity: 0;
+  animation: smokeAnim 1s forwards;
+  z-index: 9999;
+}
+
+@keyframes smokeAnim {
+  0% { opacity: 0; transform: scale(0.8); }
+  40% { opacity: 0.8; transform: scale(1.2); }
+  100% { opacity: 0; transform: scale(1.8); }
+}
 
 /* Responsividade */
-@media (max-width:640px){
-  .nav-buttons button{padding:8px 10px;font-size:0.9rem}
-  .hero h1{font-size:1.25rem}
+@media (max-width: 640px) {
+  .nav-buttons button {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+  .hero h1 {
+    font-size: 1.3rem;
+  }
 }
