@@ -36,7 +36,7 @@ font-weight: 16px;
 body{
 
 background-color: black;
-color: green;
+color: yellow;
 
 
 }
@@ -55,4 +55,40 @@ h1{
 
 p{
     text-align: center;
+}
+
+
+button[type="submit"]:hover{
+
+background-color: blue;
+
+}
+
+button[type="reset"]:hover{
+
+background-color: aqua;
+
+
+}
+
+
+nav{
+
+text-align: center;
+font-size: 30px;
+}
+
+
+body {
+    background-image: url('background.jpg');
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center center; 
+    background-attachment: fixed;
+  }
+  
+.btn-voltar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
