@@ -7,14 +7,15 @@ section{
 .cadbasico{
 
     width: 300px;
-    margin: 0px auto;
+    margin: 10px auto;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #ffffff;
 }
 
 .cadbasico input{
 
-    margin: 5px auto;
+    margin: 15px auto;
     width: 100%;
     padding: 5px 0;
 }
@@ -31,6 +32,7 @@ section{
 label{
 
     float: left;
+    color: #ffffff;
 }
 
 h2{
@@ -40,4 +42,34 @@ h2{
     margin-bottom: 0px;
     font-size: 50px;
 
+}
+
+body{
+    background-image: url('img3.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.btn-voltar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2{
+    color: #ffffff;
+}
+
+footer{
+
+    background-color: #ffffff;
+    color: black;
+    text-align: center;
+    padding: 50px;
+    
 }
