@@ -14,14 +14,29 @@ body {
 
 /* Header fixo */
 header {
-    background-color: #1e88e5;
+    background-color: #12026b;
     color: white;
-    padding: 30px 20px 40px;
+    padding: 30px 20px 40px 80px; /* adiciona espaço à esquerda para a logo */
     text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo-git {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.logo-git:hover {
+    transform: scale(1.1);
 }
 
 header h1 {
