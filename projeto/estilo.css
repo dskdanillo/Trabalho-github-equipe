@@ -1,75 +1,82 @@
-section{
-
-    margin-top: 0px auto;
-
+body {
+  background-image: url('img3.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
 }
 
-.cadbasico{
-
-    width: 300px;
-    margin: 10px auto;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #ffffff;
+section {
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: rgba(15, 23, 42, 0.85); /* azul escuro semi-transparente */
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
 }
 
-.cadbasico input{
-
-    margin: 15px auto;
-    width: 100%;
-    padding: 5px 0;
+h2 {
+  text-align: center;
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 20px;
 }
 
-.cadbasico button{
-
-    width: 30%;
-    margin: 0 10%;
-    background-color: #b1ccf5;
-    font-weight: bold;
-    font-size: 16px;
+.cadbasico {
+  border: 2px solid #4e8cd4;
+  padding: 24px 32px; /* padding interno para afastar das bordas */
+  border-radius: 8px;
+  background-color: #1e293b; /* azul escuro */
 }
 
-label{
-
-    float: left;
-    color: #ffffff;
+label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #ffffff;
 }
 
-h2{
-
-    text-align: center;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-size: 50px;
-
+.cadbasico input {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #4e8cd4;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
-body{
-    background-image: url('img3.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    min-height: 100%;
-    margin: 0;
-    position: relative;
+.cadbasico input::placeholder {
+  color: #94a3b8;
 }
 
-.btn-voltar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.botoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  gap: 10px;
 }
 
-h2{
-    color: #ffffff;
+.botoes button {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #4e8cd4;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-footer{
-
-    background-color: #ffffff;
-    color: black;
-    text-align: center;
-    padding: 50px;
-    
+.botoes button:hover {
+  background-color: #3b82f6;
 }

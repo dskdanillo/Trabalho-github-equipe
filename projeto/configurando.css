@@ -1,79 +1,86 @@
-/* Container principal do formulário */
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('background.jpg'); /* Substitua pela imagem desejada */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    color: #0f172a;
+}
+
 .form-container {
     width: 90%;
     max-width: 450px;
     margin: 40px auto;
     padding: 25px 30px;
-    background-color: #1a1a1a;
+    background-color: rgba(30, 58, 138, 0.85); /* azul escuro transparente */
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    color: #A8D5BA;
-    font-family: 'Arial', sans-serif;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    color: #e2e8f0;
 }
 
-/* Título centralizado */
 .form-container h2 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-size: 24px;
+    color: #bfdbfe;
 }
 
-/* Grupo de campos do formulário */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
-/* Estilo dos labels */
 label {
     display: block;
     margin-bottom: 6px;
     font-weight: 600;
-    color: #cde8d8;
+    color: #dbeafe;
 }
 
-/* Estilo dos inputs */
 input[type="text"],
 input[type="email"],
 input[type="date"] {
     width: 100%;
     padding: 10px 12px;
     font-size: 15px;
-    border: 1px solid #555;
-    border-radius: 5px;
-    background-color: #333;
-    color: #eee;
-    transition: border-color 0.3s ease;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: #f8fafc;
+    color: #0f172a;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="date"]:focus {
-    border-color: #4CAF50;
+input:focus {
+    border-color: #3b82f6;
     outline: none;
+    background-color: #fff;
 }
 
-/* Mensagem de erro */
+/* Erros */
 .error {
-    color: #e74c3c;
+    color: #f87171;
     font-size: 13px;
     margin-top: 5px;
-    display: block;
     min-height: 18px;
 }
 
-/* Campo com erro destacado */
 input.error-field {
-    border-color: #e74c3c;
-    background-color: #4b1a1a;
+    border-color: #f87171;
+    background-color: #fef2f2;
 }
 
-/* Estilo do botão */
+/* Botões */
 button[type="submit"] {
     width: 100%;
-    padding: 14px 0;
-    background-color: #4CAF50;
+    padding: 12px 0;
+    background-color: #60a5fa;
     color: white;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
     border: none;
     border-radius: 6px;
@@ -82,26 +89,32 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #3b82f6;
 }
 
-/* Corpo da página */
-body {
-    background-color: #121212;
-    margin: 0;
-    padding: 0;
+.btn-voltar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }
 
-/* Responsividade para telas menores */
+.btn-voltar button {
+    background-color: #cbd5e1;
+    color: #000;
+    border: none;
+    padding: 8px 24px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-voltar button:hover {
+    background-color: #93c5fd;
+}
+
+/* Responsivo */
 @media (max-width: 480px) {
     .form-container {
-        padding: 20px 15px;
-        width: 95%;
-        max-width: 350px;
-    }
-
-    button[type="submit"] {
-        font-size: 15px;
-        padding: 12px 0;
+        padding: 20px 16px;
     }
 }

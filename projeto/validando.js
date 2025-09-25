@@ -1,36 +1,34 @@
 document.getElementById("cadastroForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // bloqueia envio até validar
+    event.preventDefault(); // Impede envio imediato
     clearErrors();
     let isValid = true;
 
-    // Validação do nome: pelo menos 3 letras
     const nome = document.getElementById("nome").value.trim();
-    const letrasNoNome = nome.replace(/[^a-zA-Z]/g, "");
+    const cpf = document.getElementById("cpf").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const dataNascimento = document.getElementById("dataNascimento").value;
+
+    // Validação Nome
+    const letrasNoNome = nome.replace(/[^a-zA-ZÀ-ÿ\s]/g, "");
     if (letrasNoNome.length < 3) {
         showError("nome", "O nome deve conter pelo menos 3 letras.");
         isValid = false;
     }
 
-    // Validação CPF: deve ter exatamente 11 números
-    const cpf = document.getElementById("cpf").value.trim();
+    // Validação CPF
     const somenteNumerosCPF = cpf.replace(/\D/g, "");
-    if (somenteNumerosCPF.length < 11) {
-        showError("cpf", "CPF deve conter 11 números.");
-        isValid = false;
-    } else if (somenteNumerosCPF.length > 11) {
+    if (somenteNumerosCPF.length !== 11) {
         showError("cpf", "CPF deve conter exatamente 11 números.");
         isValid = false;
     }
 
-    // Validação e-mail
-    const email = document.getElementById("email").value.trim();
+    // Validação E-mail
     if (!isValidEmail(email)) {
         showError("email", "E-mail inválido.");
         isValid = false;
     }
 
-    // Validação data nascimento
-    const dataNascimento = document.getElementById("dataNascimento").value;
+    // Validação Data de Nascimento
     if (!dataNascimento) {
         showError("dataNascimento", "A data de nascimento é obrigatória.");
         isValid = false;
@@ -45,12 +43,15 @@ document.getElementById("cadastroForm").addEventListener("submit", function(even
     }
 });
 
-function showError(inputId, message) {
-    document.getElementById(`${inputId}Error`).textContent = message;
+function showError(id, message) {
+    const errorSpan = document.getElementById(id + "Error");
+    errorSpan.textContent = message;
+    document.getElementById(id).classList.add("error-field");
 }
 
 function clearErrors() {
     document.querySelectorAll(".error").forEach(el => el.textContent = "");
+    document.querySelectorAll("input").forEach(input => input.classList.remove("error-field"));
 }
 
 function isValidEmail(email) {
@@ -61,7 +62,5 @@ function isValidEmail(email) {
 function isValidDate(dateString) {
     const date = new Date(dateString);
     const now = new Date();
-    if (isNaN(date.getTime())) return false;
-    if (date > now) return false;
-    return true;
+    return !isNaN(date.getTime()) && date <= now;
 }

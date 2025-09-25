@@ -9,11 +9,11 @@
 :root {
   --bg: #0f172a;
   --card: #1e293b;
-  --accent: #6c63ff; /* azul vibrante */
+  --accent: #6c63ff;
   --muted: #94a3b8;
-  --highlight: #2b86c5;      /* azul médio */
-  --highlight2: #1e5fa8;     /* azul escuro */
-  --highlight3: #174e89;     /* azul mais escuro */
+  --highlight: #2b86c5; /* Azul principal */
+  --highlight2: #3a9ad9; /* Azul claro */
+  --highlight3: #1c4e80; /* Azul escuro */
 }
 
 body {
@@ -47,6 +47,7 @@ body {
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .nav-buttons button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 8px var(--highlight);
@@ -60,7 +61,7 @@ body {
 
 .hero {
   padding: 22px 18px;
-  background: linear-gradient(180deg, rgba(43, 134, 197, 0.2), transparent);
+  background: linear-gradient(180deg, rgba(40, 130, 210, 0.2), transparent);
   border-radius: 12px;
   text-align: center;
 }
@@ -69,6 +70,7 @@ body {
   font-size: 1.8rem;
   margin-bottom: 6px;
   background: linear-gradient(90deg, var(--highlight), var(--highlight2), var(--highlight3));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -110,7 +112,7 @@ body {
 
 .jobs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas fixas */
   gap: 16px;
 }
 
@@ -127,15 +129,18 @@ body {
   position: relative;
   overflow: hidden;
 }
+
 .job-card:hover {
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 0 15px 3px var(--highlight);
+  box-shadow: 0 0 12px var(--highlight);
   background: linear-gradient(135deg, var(--highlight), var(--highlight2));
 }
+
 .job-card h4 {
   margin-bottom: 8px;
   font-size: 1.1rem;
 }
+
 .location {
   font-size: 0.9rem;
   color: var(--muted);
@@ -144,7 +149,7 @@ body {
 .apply {
   margin: 22px 0;
   padding: 14px;
-  background: linear-gradient(90deg, rgba(43, 134, 197, 0.1), transparent);
+  background: linear-gradient(90deg, rgba(40,130,210,0.1), transparent);
   border-radius: 10px;
   text-align: center;
 }
@@ -155,15 +160,30 @@ body {
   color: var(--muted);
 }
 
-/* REMOVIDO efeito de fumaça e animação */
+/* Removido efeito de fumaça e ajustado neon fraco em azul */
 
 /* Responsividade */
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
+  .jobs-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas para telas médias */
+  }
+}
+
+@media (max-width: 768px) {
+  .jobs-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas para tablets */
+  }
+}
+
+@media (max-width: 480px) {
   .nav-buttons button {
     padding: 8px 10px;
     font-size: 0.9rem;
   }
   .hero h1 {
     font-size: 1.3rem;
+  }
+  .jobs-grid {
+    grid-template-columns: 1fr; /* 1 coluna para celular */
   }
 }
