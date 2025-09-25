@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="config.css">
     <script src="validaproc.js"></script>
-    <title>Formulario Profissional</title>
+    <title>Formulário Profissional</title>
 </head>
 <body>
-    <H1>Formulario Profissional</H1>
-
+    <H1>Formulário Profissional</H1>
     <section>
        
-        <p>Ficou com alguma dúvida? Preencha este formulário e entraremos em contato!</p>
+        <p>Preencha este formulário e entraremos em contato!</p>
         <form name="fmrfaleconosco" method="get" action="#" onsubmit="return procFormulario()">
             <fieldset class="faleconosco">
                 <legend>Dados Profissionais:</legend>
@@ -24,7 +23,6 @@
                 <input type="text" name="txtcargo" id="cargo">
                 <label for="fone">Telefone:</label>
                 <input type="text" name="txtfone" id="fone">
-
             </fieldset>
             <fieldset class="faleconosco">
                 <legend>Motivo do contato:</legend>
@@ -37,13 +35,14 @@
                 <label for="comentario">Comentário:</label>
                 <textarea name="txacomentario" id="comentario"></textarea>
                 <button type="reset">Limpar</button><button type="submit">Enviar</button>
+                <div class="btn-voltar">
+                    <button type="voltar" onclick="window.location.href='index.html'">Voltar</button>
+                </div>
                 
             </fieldset>
 
         </form>
-
-
+    
 </section>
-
 </body>
 </html>
