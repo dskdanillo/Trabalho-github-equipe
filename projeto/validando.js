@@ -1,21 +1,24 @@
 document.getElementById("cadastroForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+    event.preventDefault(); // bloqueia envio até validar
     clearErrors();
     let isValid = true;
 
-    // Validação do nome: pelo menos 3 letras (a-zA-Z)
+    // Validação do nome: pelo menos 3 letras
     const nome = document.getElementById("nome").value.trim();
-    const letrasNoNome = nome.replace(/[^a-zA-Z]/g, ""); // só letras
+    const letrasNoNome = nome.replace(/[^a-zA-Z]/g, "");
     if (letrasNoNome.length < 3) {
         showError("nome", "O nome deve conter pelo menos 3 letras.");
         isValid = false;
     }
 
-    // Validação CPF: deve ter exatamente 11 números e só números
+    // Validação CPF: deve ter exatamente 11 números
     const cpf = document.getElementById("cpf").value.trim();
-    const somenteNumerosCPF = cpf.replace(/\D/g, ""); // remove tudo que não é número
-    if (somenteNumerosCPF.length !== 11 || cpf !== somenteNumerosCPF) {
-        showError("cpf", "CPF deve conter exatamente 11 números e apenas números.");
+    const somenteNumerosCPF = cpf.replace(/\D/g, "");
+    if (somenteNumerosCPF.length < 11) {
+        showError("cpf", "CPF deve conter 11 números.");
+        isValid = false;
+    } else if (somenteNumerosCPF.length > 11) {
+        showError("cpf", "CPF deve conter exatamente 11 números.");
         isValid = false;
     }
 
