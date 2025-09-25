@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="config.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="config.css" />
     <script src="validaproc.js"></script>
     <title>Formulário Profissional</title>
 </head>
 <body>
-    <H1>Formulário Profissional</H1>
+    <h1>Formulário Profissional</h1>
     <section>
-       
         <p>Preencha este formulário e entraremos em contato!</p>
         <form name="fmrfaleconosco" method="get" action="#" onsubmit="return procFormulario()">
             <fieldset class="faleconosco">
                 <legend>Dados Profissionais:</legend>
                 <label for="nome">Nome da Empresa:</label>
-                <input type="text" name="txtnome" id="nome">
+                <input type="text" name="txtnome" id="nome" />
+                
                 <label for="cnpj">CNPJ:</label>
-                <input type="text" name="txtcnpj" id="cnpj">
+                <input type="text" name="txtcnpj" id="cnpj" />
+                
                 <label for="cargo">Cargo:</label>
-                <input type="text" name="txtcargo" id="cargo">
+                <input type="text" name="txtcargo" id="cargo" />
+                
                 <label for="fone">Telefone:</label>
-                <input type="text" name="txtfone" id="fone">
+                <input type="text" name="txtfone" id="fone" />
             </fieldset>
+
             <fieldset class="faleconosco">
                 <legend>Motivo do contato:</legend>
                 <label for="motivo">Motivo:</label>
                 <select name="selmotivo" id="motivo">
                     <option value="">Escolha</option>
                     <option value="RE">Reclamação</option>
-                    <option value="SU">Sujestão</option>
+                    <option value="SU">Sugestão</option>
                 </select>
+                
                 <label for="comentario">Comentário:</label>
                 <textarea name="txacomentario" id="comentario"></textarea>
-                <button type="reset">Limpar</button><button type="submit">Enviar</button>
-                <div class="btn-voltar">
-                    <button type="voltar" onclick="window.location.href='index.html'">Voltar</button>
-                </div>
                 
+                <button type="reset">Limpar</button>
+                <button type="submit">Enviar</button>
+                
+                <div class="btn-voltar">
+                    <button type="button" onclick="window.location.href='index.html'">Voltar</button>
+                </div>
             </fieldset>
-
         </form>
-    
-</section>
+    </section>
 </body>
 </html>
