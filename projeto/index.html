@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Profissional</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Trabalho Colaborativo - GitHub</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="content">
-        <h1>Bem-vindo à Página Inicial</h1>
-        <p>Escolha uma das opções abaixo para navegar:</p>
-    </div>
-    <div class="footer"> 
-            <button onclick="window.location.href='pessoal.html'">CADASTRO PESSOAL</button> 
-            <button onclick="window.location.href='fprofissional.html'">CADASTRO PROFISSIONAL</button> 
-            <button onclick="window.location.href='endereco.html'">CADASTRO ENDEREÇO</button> 
-            
-          
 
+    <header>
+        <h1>Trabalho colaborativo para fins de aprendizagem do uso em conjunto do GitHub</h1>
+        <p>
+            Este projeto simula um trabalho em equipe com quatro colaboradores:
+            <strong>Danillo</strong> (Tech Lead),
+            <strong>Guilherme Sens</strong>, <strong>Gustavo Carvalho</strong> e <strong>Enzo Bonassa</strong> (Devs).
+            Cada desenvolvedor trabalhou em sua própria <em>branch</em>, e ao final o Tech Lead realizou o
+            <code>git merge</code> para unificação do trabalho no repositório compartilhado.
+        </p>
+        
+    </header>
+
+    <main>
+        <section class="content">
+            <h2>Seja bem-vindo!</h2>
+            <p>Escolha uma das opções acima para iniciar o preenchimento dos cadastros.</p>
+        </section>
+        <div class="nav-buttons">
+            <button onclick="window.location.href='pessoal.html'">Cadastro Pessoal</button>
+            <button onclick="window.location.href='fprofissional.html'">Cadastro Profissional</button>
+            <button onclick="window.location.href='endereco.html'">Cadastro Endereço</button>
         </div>
-            
+    </main>
 
+</body>
 </html>
